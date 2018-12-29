@@ -28,6 +28,7 @@ namespace TaskWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IFizzRepository, FizzRepository>();
+            services.AddScoped<IMockyRepository, MockyRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
