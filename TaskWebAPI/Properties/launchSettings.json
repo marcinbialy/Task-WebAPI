@@ -20,7 +20,7 @@
     "TaskWebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/fizzbuzz/1",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

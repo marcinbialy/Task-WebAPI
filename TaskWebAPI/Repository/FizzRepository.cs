@@ -10,8 +10,11 @@ namespace TaskWebAPI.Repository
         public string Get(int number)
         {
             string result = "";
-
-            if (number % 2 == 0 & number % 3 == 0)
+            if (number <= 0)
+            {
+                result += "Enter a number greater than zero!";
+            }
+            else if (number % 2 == 0 & number % 3 == 0)
             {
                 result += "FizzBuzz";
             }
