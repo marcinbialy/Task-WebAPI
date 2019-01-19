@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
-using TaskWebAPI.Repository;
+using TaskWebAPI.Methods;
 
 namespace TaskWebAPI
 {
@@ -27,8 +27,8 @@ namespace TaskWebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IFizzRepository, FizzRepository>();
-            services.AddScoped<IMockyRepository, MockyRepository>();
+            services.AddScoped<IFizzBuzz, FizzBuzz>();
+            services.AddScoped<IMocky, Mocky>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

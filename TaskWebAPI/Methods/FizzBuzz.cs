@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TaskWebAPI.Repository
+namespace TaskWebAPI.Methods
 {
-    public class FizzRepository : IFizzRepository
+    public class FizzBuzz : IFizzBuzz
     {
         public string Get(int number)
         {

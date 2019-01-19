@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TaskWebAPI.Repository;
+using TaskWebAPI.Methods;
 
 namespace TaskWebAPI.Controllers
 {
@@ -12,22 +12,24 @@ namespace TaskWebAPI.Controllers
     [ApiController]
     public class FizzBuzzController : ControllerBase
     {
-        private readonly IFizzRepository fizzRepository;
+        private readonly IFizzBuzz fizz;
 
-        public FizzBuzzController(IFizzRepository fizzRepository)
+        public FizzBuzzController(IFizzBuzz fizz)
         {
-            this.fizzRepository = fizzRepository;
+            this.fizz = fizz;
         }
 
         // GET api/fizzbuzz/5
         [HttpGet("{number}")]
-        public ActionResult<string> Get(int number)
+        public IActionResult Get(int number)
         {
-            var result = fizzRepository.Get(number);
+            var result = fizz.Get(number);
 
-            if (result == null)
+            if (String.IsNullOrEmpty(result))
+            {
                 return NotFound();
-
+            }
+                
             return Ok(result);
         }
     }

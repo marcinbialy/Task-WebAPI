@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TaskWebAPI.Repository;
+using TaskWebAPI.Methods;
 
 namespace TaskWebAPI.Controllers
 {
@@ -12,22 +13,31 @@ namespace TaskWebAPI.Controllers
     [ApiController]
     public class MockyController : ControllerBase
     {
-        private readonly IMockyRepository mockyRepository;
+        private readonly IMocky mocky;
 
-        public MockyController(IMockyRepository mockyRepository)
+        public MockyController(IMocky mocky)
         {
-            this.mockyRepository = mockyRepository;
+            this.mocky = mocky;
         }
 
         [HttpGet]
-        public ActionResult<string> Mocky()
+        public IActionResult Mocky()
         {
-            var result = mockyRepository.GetMocky();
+            try
+            {
+                var result = mocky.GetMocky("http://www.mocky.io/v2/5c127054330000e133998f85");
 
-            if (result == null)
-                return NotFound();
-
-            return Ok(result);
+                if (String.IsNullOrEmpty(result))
+                {
+                    return NotFound();
+                }
+                
+                return Ok(result);
+            }
+            catch (WebException)
+            {
+                return StatusCode((int)HttpStatusCode.ServiceUnavailable);
+            }
         }
     }
 }
