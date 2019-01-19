@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWebAPI", "TaskWebAPI\TaskWebAPI.csproj", "{63DFAAF4-4C8C-4CA4-8008-E41620333BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskWebAPI", "TaskWebAPI\TaskWebAPI.csproj", "{63DFAAF4-4C8C-4CA4-8008-E41620333BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWebAPI.UnitTests", "TaskWebAPI.UnitTests\TaskWebAPI.UnitTests.csproj", "{B4352815-7B09-4DF5-BBDA-33EA7CE5241E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{63DFAAF4-4C8C-4CA4-8008-E41620333BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63DFAAF4-4C8C-4CA4-8008-E41620333BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63DFAAF4-4C8C-4CA4-8008-E41620333BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4352815-7B09-4DF5-BBDA-33EA7CE5241E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4352815-7B09-4DF5-BBDA-33EA7CE5241E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4352815-7B09-4DF5-BBDA-33EA7CE5241E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4352815-7B09-4DF5-BBDA-33EA7CE5241E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
